@@ -1,3 +1,15 @@
+<?php include 'include/config.php';
+
+$sqlBio = "SELECT * FROM `users` WHERE `users`.`nim` = 2004411285";
+$resultBio = mysqli_query($con, $sqlBio);
+$dataBio = mysqli_fetch_assoc($resultBio);
+
+$sqlPort = "SELECT * FROM `portfolio` WHERE `portfolio`.`nim` = 2004411285";
+$resultPort = mysqli_query($con, $sqlPort);
+$dataPort = mysqli_fetch_assoc($resultPort);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +56,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <h1 class="logo">
-                <a href="index.html"><img src="assets/img/logo/logo-2,1.png"></a>
+                <a href="#hero"><img src="<?=$dataBio['logo']?>"></a>
             </h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -66,13 +78,13 @@
     <!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/hero-bg.jpg)">
+    <div id="hero" class="hero route bg-image" style="background-image: url(<?=$dataBio['bg']?>)">
         <div class="overlay-itro"></div>
         <div class="hero-content display-table">
             <div class="table-cell">
                 <div class="container">
                     <!--<p class="display-6 color-d">Hello, world!</p>-->
-                    <h1 class="hero-title mb-4">Rely Arfadillah</h1>
+                    <h1 class="hero-title mb-4"><?=$dataBio['nama']?></h1>
                     <p class="hero-subtitle"><span class="typed" data-typed-items="Graphic Designer, Flutter Developer, & College Student"></span></p>
                     <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
                 </div>
@@ -94,15 +106,15 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-md-5">
                                             <div class="about-img">
-                                                <img src="assets/img/testimonial-2.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                                                <img src="<?=$dataBio['profile']?>" class="img-fluid rounded b-shadow-a" alt="">
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-7">
                                             <div class="about-info">
-                                                <p><span class="title-s">Nama: </span> <span>Rely Arfadillah</span></p>
-                                                <p><span class="title-s">NIM : </span> <span>2004411285</span></p>
-                                                <p><span class="title-s">Matkul : </span> <span>Aplikasi Client-Server</span></p>
-                                                <p><span class="title-s">Kelas: </span> <span>5 Gab 4 Web</span></p>
+                                                <p><span class="title-s">Nama: </span> <span><?=$dataBio['nama']?></span></p>
+                                                <p><span class="title-s">NIM : </span> <span><?=$dataBio['nim']?></span></p>
+                                                <p><span class="title-s">Matkul : </span> <span><?=$dataBio['matkul']?></span></p>
+                                                <p><span class="title-s">Kelas: </span> <span><?=$dataBio['kelas']?></span></p>
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +146,7 @@
                                             </h5>
                                         </div>
                                         <p class="lead">
-                                            Nama saya <b>Rely Arfadillah</b> dan saya adalah mahasiswa <b>Universitas Cokroaminoto Palopo</b>. Kehidupan sehari-hari saya adalah sebagai mahasiswa dan freelancer. Saya melakukan pekerjaan seperti menerima
+                                            Nama saya <b><?=$dataBio['nama']?></b> dan saya adalah mahasiswa <b>Universitas Cokroaminoto Palopo</b>. Kehidupan sehari-hari saya adalah sebagai mahasiswa dan freelancer. Saya melakukan pekerjaan seperti menerima
                                             pesanan untuk desain grafis dan membuat proyek sampingan untuk situs web dan aplikasi mobile, terutama untuk aplikasi Android.
                                         </p>
                                         <p class="lead">
@@ -176,10 +188,10 @@
                             <div class="service-content">
                                 <h2 class="s-title">Lulusan SD</h2>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-map-pin"></i> SD Negeri 39 Palopo
+                                    <i class="uil uil-map-pin"></i> <?=$dataBio['sd']?>
                                 </p>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-calender"></i> 2007 - 2012
+                                    <i class="uil uil-calender"></i> <?=$dataBio['sdYear']?>
                                 </p>
                             </div>
                         </div>
@@ -192,10 +204,10 @@
                             <div class="service-content">
                                 <h2 class="s-title">Lulusan SMP</h2>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-map-pin"></i> SMP Negeri 13 Palopo
+                                    <i class="uil uil-map-pin"></i> <?=$dataBio['smp']?>
                                 </p>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-calender"></i> 2013- 2016
+                                    <i class="uil uil-calender"></i> <?=$dataBio['smpYear']?>
                                 </p>
                             </div>
                         </div>
@@ -208,10 +220,10 @@
                             <div class="service-content">
                                 <h2 class="s-title">Lulusan SMA</h2>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-map-pin"></i> SMA Negeri 6 Palopo
+                                    <i class="uil uil-map-pin"></i> <?=$dataBio['sma']?>
                                 </p>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-calender"></i> 2017 - 2019
+                                    <i class="uil uil-calender"></i> <?=$dataBio['smaYear']?>
                                 </p>
                             </div>
                         </div>
@@ -222,12 +234,12 @@
                                 <span class="ico-circle"><i class="bi bi-cpu"></i></span>
                             </div>
                             <div class="service-content">
-                                <h2 class="s-title">Teknik Informatika</h2>
+                                <h2 class="s-title"><?=$dataBio['sertifikat-1']?></h2>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-map-pin"></i> Universitas Cokroaminoto Palopo
+                                    <i class="uil uil-map-pin"></i> <?=$dataBio['loc1']?>
                                 </p>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-calender"></i> 2020 - 2024
+                                    <i class="uil uil-calender"></i> <?=$dataBio['year1']?>
                                 </p>
                             </div>
                         </div>
@@ -238,12 +250,12 @@
                                 <span class="ico-circle"><i class="uil uil-brackets-curly"></i></i></span>
                             </div>
                             <div class="service-content">
-                                <h2 class="s-title">Flutter Development</h2>
+                                <h2 class="s-title"><?=$dataBio['sertifikat-2']?></h2>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-map-pin"></i> ID Camp - Dicoding Academy
+                                    <i class="uil uil-map-pin"></i> <?=$dataBio['loc2']?>
                                 </p>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-calender"></i> 2021
+                                    <i class="uil uil-calender"></i> <?=$dataBio['year2']?>
                                 </p>
                             </div>
                         </div>
@@ -254,12 +266,12 @@
                                 <span class="ico-circle"><i class="uil uil-box"></i></i></span>
                             </div>
                             <div class="service-content">
-                                <h2 class="s-title">Desain Kemasan</h2>
+                                <h2 class="s-title"><?=$dataBio['sertifikat-3']?></h2>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-map-pin"></i> BDI Makassar - Indonesia
+                                    <i class="uil uil-map-pin"></i> <?=$dataBio['loc3']?>
                                 </p>
                                 <p class="s-description text-center">
-                                    <i class="uil uil-calender"></i> 2022
+                                    <i class="uil uil-calender"></i> <?=$dataBio['year3']?>
                                 </p>
                             </div>
                         </div>
@@ -342,17 +354,17 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="assets/img/work-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                            <a href="<?=$dataPort['imgPath1']?>" data-gallery="portfolioGallery" class="portfolio-lightbox">
                                 <div class="work-img">
-                                    <img src="assets/img/work-1.jpg" alt="" class="img-fluid">
+                                    <img src="<?=$dataPort['imgPath1']?>" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
                                 <div class="row">
                                     <div class="col-sm-8">
-                                        <h2 class="w-title">Logo Desain Untuk Brand Bolu Amsa</h2>
+                                        <h2 class="w-title"><?=$dataPort['title1']?></h2>
                                         <div class="w-more">
-                                            <span class="w-ctegory">Graphic Design</span> / <span class="w-date">8 Sep. 2021</span>
+                                            <span class="w-ctegory"><?=$dataPort['sub1']?></span> / <span class="w-date"><?=$dataPort['date1']?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -361,17 +373,17 @@
                     </div>
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="assets/img/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                            <a href="<?=$dataPort['imgPath2']?>" data-gallery="portfolioGallery" class="portfolio-lightbox">
                                 <div class="work-img">
-                                    <img src="assets/img/work-2.jpg" alt="" class="img-fluid">
+                                    <img src="<?=$dataPort['imgPath2']?>" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
                                 <div class="row">
                                     <div class="col-sm-8">
-                                        <h2 class="w-title">Desain Kemasan Bolu Amsa</h2>
+                                        <h2 class="w-title"><?=$dataPort['title2']?></h2>
                                         <div class="w-more">
-                                            <span class="w-ctegory">Graphic Design</span> / <span class="w-date">12 Okt. 2021</span>
+                                            <span class="w-ctegory"><?=$dataPort['sub2']?></span> / <span class="w-date"><?=$dataPort['date2']?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -380,17 +392,17 @@
                     </div>
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="assets/img/work-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                            <a href="<?=$dataPort['imgPath3']?>" data-gallery="portfolioGallery" class="portfolio-lightbox">
                                 <div class="work-img">
-                                    <img src="assets/img/work-3.jpg" alt="" class="img-fluid">
+                                    <img src="<?=$dataPort['imgPath3']?>" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
                                 <div class="row">
                                     <div class="col-sm-8">
-                                        <h2 class="w-title">Desain Kemasan Sarabba Bubuk</h2>
+                                        <h2 class="w-title"><?=$dataPort['title3']?></h2>
                                         <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span class="w-date">26 Jul. 2021</span>
+                                            <span class="w-ctegory"><?=$dataPort['sub3']?></span> / <span class="w-date"><?=$dataPort['date3']?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -399,17 +411,17 @@
                     </div>
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="assets/img/work-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                            <a href="<?=$dataPort['imgPath4']?>" data-gallery="portfolioGallery" class="portfolio-lightbox">
                                 <div class="work-img">
-                                    <img src="assets/img/work-4.jpg" alt="" class="img-fluid">
+                                    <img src="<?=$dataPort['imgPath4']?>" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
                                 <div class="row">
                                     <div class="col-sm-8">
-                                        <h2 class="w-title">Desain Website Wisata Kota Palopo</h2>
+                                        <h2 class="w-title"><?=$dataPort['title4']?></h2>
                                         <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span class="w-date">25 Sep. 2022</span>
+                                            <span class="w-ctegory"><?=$dataPort['sub4']?></span> / <span class="w-date"><?=$dataPort['date4']?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -418,17 +430,17 @@
                     </div>
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="assets/img/work-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                            <a href="<?=$dataPort['imgPath5']?>" data-gallery="portfolioGallery" class="portfolio-lightbox">
                                 <div class="work-img">
-                                    <img src="assets/img/work-5.jpg" alt="" class="img-fluid">
+                                    <img src="<?=$dataPort['imgPath5']?>" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
                                 <div class="row">
                                     <div class="col-sm-8">
-                                        <h2 class="w-title">Desain UI Aplikasi Android BMI</h2>
+                                        <h2 class="w-title"><?=$dataPort['title5']?></h2>
                                         <div class="w-more">
-                                            <span class="w-ctegory">UI Design</span> / <span class="w-date">18 Jan. 2020</span>
+                                            <span class="w-ctegory"><?=$dataPort['sub5']?></span> / <span class="w-date"><?=$dataPort['date5']?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -437,17 +449,17 @@
                     </div>
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="assets/img/work-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                            <a href="<?=$dataPort['imgPath6']?>" data-gallery="portfolioGallery" class="portfolio-lightbox">
                                 <div class="work-img">
-                                    <img src="assets/img/work-6.jpg" alt="" class="img-fluid">
+                                    <img src="<?=$dataPort['imgPath6']?>" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
                                 <div class="row">
                                     <div class="col-sm-8">
-                                        <h2 class="w-title">Desain Logo Cafe Alang Puyuh</h2>
+                                        <h2 class="w-title"><?=$dataPort['title6']?></h2>
                                         <div class="w-more">
-                                            <span class="w-ctegory">Graphic Design</span> / <span class="w-date">15 Des. 2020</span>
+                                            <span class="w-ctegory"><?=$dataPort['sub6']?></span> / <span class="w-date"><?=$dataPort['date6']?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -516,9 +528,9 @@
                                                 Hubungi nomor dan email kami untuk informasi lebih lanjut
                                             </p>
                                             <ul class="list-ico">
-                                                <li><span class="bi bi-geo-alt"></span> Pongsimpin St Palopo, 91925</li>
-                                                <li><span class="bi bi-phone"></span> 0895635090134</li>
-                                                <li><span class="bi bi-envelope"></span> relymendenz@gmail.com</li>
+                                                <li><span class="bi bi-geo-alt"></span><?=$dataBio['alamat']?></li>
+                                                <li><span class="bi bi-phone"></span><?=$dataBio['telpon']?></li>
+                                                <li><span class="bi bi-envelope"></span><?=$dataBio['email']?></li>
                                             </ul>
                                         </div>
                                         <div class="socials">
@@ -548,7 +560,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="copyright-box">
-                        <p class="copyright">&copy; Copyright <strong>Rely Arfadillah </strong>- 2004411285</p>
+                        <p class="copyright">&copy; Copyright <strong><?=$dataBio['nama']?> </strong>- <?=$dataBio['nim']?></p>
                         <div class="credits">
                             <!--
               All the links in the footer should remain intact.
