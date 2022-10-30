@@ -1,3 +1,4 @@
+<!-- PHP CODE FOR DISPLAYING DATABASE TABLE -->
 <?php include 'include/config.php';
 
 $sqlBio = "SELECT * FROM `users` WHERE `users`.`nim` = 2004411285";
@@ -17,7 +18,7 @@ $dataPort = mysqli_fetch_assoc($resultPort);
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>UTS Aplikasi Client Server</title>
+    <title>2004411285</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -488,7 +489,7 @@ $dataPort = mysqli_fetch_assoc($resultPort);
                                             </h5>
                                         </div>
                                         <div>
-                                            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                                            <form action="" method="post" role="form" class="php-email-form">
                                                 <div class="row">
                                                     <div class="col-md-12 mb-3">
                                                         <div class="form-group">
@@ -504,11 +505,6 @@ $dataPort = mysqli_fetch_assoc($resultPort);
                                                         <div class="form-group">
                                                             <textarea class="form-control" name="message" rows="5" placeholder="Pesan" required></textarea>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-12 text-center my-3">
-                                                        <div class="loading">Loading</div>
-                                                        <div class="error-message"></div>
-                                                        <div class="sent-message">Pesan Anda Telah Terkirim.</div>
                                                     </div>
                                                     <div class="col-md-12 text-center">
                                                         <button type="submit" class="button button-a button-big button-rouded">Kirim</button>
