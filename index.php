@@ -1,6 +1,7 @@
 <!-- PHP CODE FOR DISPLAYING DATABASE TABLE -->
 <?php include 'include/config.php';
 
+// Ganti Nim untuk menampikan data yang berbeda pada website
 $sqlBio = "SELECT * FROM `users` WHERE `users`.`nim` = 2004411285";
 $resultBio = mysqli_query($con, $sqlBio);
 $dataBio = mysqli_fetch_assoc($resultBio);
@@ -68,6 +69,7 @@ $dataPort = mysqli_fetch_assoc($resultPort);
                     <li><a class="nav-link scrollto" href="#about">Tentang Saya</a></li>
                     <li><a class="nav-link scrollto" href="#services">Education</a></li>
                     <li><a class="nav-link scrollto " href="#work">Portfolio</a></li>
+                    <li><a class="nav-link scrollto " href="input_form.php">Input DB</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -163,6 +165,7 @@ $dataPort = mysqli_fetch_assoc($resultPort);
             </div>
         </section>
         <!-- End About Section -->
+
 
         <!-- ======= Education Section ======= -->
         <section id="services" class="services-mf pt-5 route">
@@ -280,7 +283,8 @@ $dataPort = mysqli_fetch_assoc($resultPort);
                 </div>
             </div>
         </section>
-        <!-- End Services Section -->
+        <!-- End Education Section -->
+
 
         <!-- ======= Client Section ======= -->
         <div class="section-counter paralax-mf bg-image" style="background-image: url(assets/img/counters-bg.jpg)">
@@ -335,6 +339,7 @@ $dataPort = mysqli_fetch_assoc($resultPort);
             </div>
         </div>
         <!-- End Counter Section -->
+
 
         <!-- ======= Portfolio Section ======= -->
         <section id="work" class="portfolio-mf sect-pt4 route">
@@ -473,6 +478,7 @@ $dataPort = mysqli_fetch_assoc($resultPort);
         </section>
         <!-- End Portfolio Section -->
 
+        
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
             <div class="overlay-mf"></div>

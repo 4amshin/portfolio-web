@@ -448,6 +448,7 @@ a:hover {
 
 .button {
     display: inline-block;
+    margin-top: 1rem;
     padding: 0.3rem 0.6rem;
     text-align: center;
     vertical-align: middle;
@@ -473,7 +474,7 @@ a:hover {
 
 .button-a {
     text-decoration: none;
-    background-color: #0078ff;
+    background-color: var(--first-color);
     color: #fff;
     border-color: #cde1f8;
 }
@@ -925,7 +926,7 @@ a:hover {
 
 
 /*--------------------------------------------------------------
-# Services
+# Education
 --------------------------------------------------------------*/
 
 .service-box {
